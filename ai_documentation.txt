@@ -1,0 +1,23 @@
+Needed help with test_utils.py because I was running into some problem we the test functions that I have created. I asked Chat how to fix the bug and gave me a code:
+def test_whiten():
+    fs = 4096.0
+    dt = 1.0 / fs
+    N = 4096
+    t = np.arange(N) * dt
+    x = 0.5 * np.sin(2 * np.pi * 100 * t) + 0.1 * np.random.default_rng(0).standard_normal(N)
+    def interp_psd(freqs):
+        return np.ones_like(freqs, dtype=float)
+    y = utils.whiten(x, interp_psd, dt)
+    assert isinstance(y, np.ndarray)
+    assert len(y) == len(x)
+    assert np.all(np.isfinite(y))
+    v = float(np.var(y))
+    assert 1e-6 < v < 1e3
+
+def test_reqshift():
+    fs = 4096
+    dur = 1.0
+    t = np.arange(int(fs*dur)) / fs
+    x = 0.7*np.sin(2*np.pi*440*t) + 0.2*np.sin(2*np.pi*880*t)
+    y = utils.reqshift(x, fshift=0.0, sample_rate=fs)
+    assert np.max(np.abs(y - x)) < 1e-6

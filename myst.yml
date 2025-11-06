@@ -1,0 +1,14 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  title: "From Notebooks to Research Packages Part II"
+  authors:
+    - name: "Eric Gwon"
+  binder:
+    url: "https://mybinder.org/v2/gh/UCB-stat-159-f25/hw3-AsianTonyStark1001/HEAD?urlpath=lab/tree/LOSC_Event_tutorial.ipynb"
+
+toc:
+  - file: README.md
+    title: Home
+  - file: LOSC_Event_tutorial.ipynb
+    title: Notebook
