@@ -14,4 +14,4 @@ html:
 	myst build --html
 clean:
 	@echo "Cleaning generated assets..."
-	@rm -rf figures audio _build
+	@rm -rf figures/* audio/* _build
