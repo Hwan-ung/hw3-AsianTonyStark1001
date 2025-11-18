@@ -7,5 +7,5 @@
 
 # Summary:
 1. There is a binder for the LOSC event tutorial in this page.
-2. There are different folders such as figures, audio, and data.
+2. There are different folders such as figures, audio, and data!
    
